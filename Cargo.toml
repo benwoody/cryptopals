@@ -1,0 +1,9 @@
+[package]
+name = "cryptopals"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hex = "0.4"           # Hex encoding/decoding
+base64 = "0.22"       # Base64 operations  
+rand = "0.9"          # Random number generation
