@@ -12,6 +12,7 @@
 // 746865206b696420646f6e277420706c6179
 
 use crate::utils::xor::xor_bytes;
+use hex;
 
 pub fn solve_challenge2() -> Result<(), Box<dyn std::error::Error>> {
     let input1 = hex::decode("1c0111001f010100061a024b53535009181c")?;
@@ -20,6 +21,13 @@ pub fn solve_challenge2() -> Result<(), Box<dyn std::error::Error>> {
 
     let result = xor_bytes(&input1, &input2);
     assert_eq!(result, expected);
+
+    println!("Challenge 2: Fixed XOR");
+    println!("Input1 (hex): 1c0111001f010100061a024b53535009181c");
+    println!("Input2 (hex): 686974207468652062756c6c277320657965");
+    println!("Expected (hex): 746865206b696420646f6e277420706c6179");
+    println!("Result (hex): {}", hex::encode(&result));
+    println!("Match: {}", result == expected);
 
     Ok(())
 }
